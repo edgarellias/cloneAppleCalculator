@@ -9,7 +9,7 @@ export default function Calculator() {
 
 	function inputNum(e) {
 		var input = e.target.value;
-		if (num == 0) {
+		if (num === 0) {
 			setNum(input);
 		} else {
 			setNum(num + input);
@@ -40,16 +40,16 @@ export default function Calculator() {
 	}
 
 	function calculate() {
-		if (operator == "/") {
+		if (operator === "/") {
 			setNum(parseFloat(oldnum) / parseFloat(num));
 		}
-		if (operator == "*") {
+		if (operator === "*") {
 			setNum(parseFloat(oldnum) * parseFloat(num));
 		}
-		if (operator == "-") {
+		if (operator === "-") {
 			setNum(parseFloat(oldnum) - parseFloat(num));
 		}
-		if (operator == "+") {
+		if (operator === "+") {
 			setNum(parseFloat(oldnum) + parseFloat(num));
 		}
 	}
