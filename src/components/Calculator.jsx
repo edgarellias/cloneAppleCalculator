@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Box, Container } from "@mui/system";
+import { Box } from "@mui/system";
 import { useState } from "react";
 
 export default function Calculator() {
@@ -56,12 +56,12 @@ export default function Calculator() {
 
 	return (
 		<>
-			<Box m={5} />
-			<Container maxWidth="xs">
+			<Container>
+			<Contents>
 				<h1>Clone Calculadora Apple !</h1>
 
 				<Calculatorbtn>
-					<Box m={12} />
+					<Box m={12}/>
 					<h1>{num}</h1>
 					<button onClick={clear}>AC</button>
 					<button onClick={changeSign}>+/-</button>
@@ -116,10 +116,28 @@ export default function Calculator() {
 						=
 					</button>
 				</Calculatorbtn>
+			</Contents>
 			</Container>
 		</>
 	);
 }
+
+const Container = styled.div`
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+	@media screen and (max-width: 400px){
+		padding: 0px 5px 
+	}
+`
+const Contents = styled.div`
+	width: 400px;	
+	text-align: center;
+	h1{
+		margin-bottom: 5%;
+	}
+`;
 
 const Calculatorbtn = styled.div`
 	background-color: black;
@@ -130,6 +148,9 @@ const Calculatorbtn = styled.div`
 		text-align: end;
 		margin-right: 1em;
 		font-size: 3.5em;
+		@media screen and (max-width: 400px){
+			font-size: 2.5em;
+		}
 	}
 	.orange {
 		background-color: #ff9500;
@@ -150,6 +171,14 @@ const Calculatorbtn = styled.div`
 		border: none;
 		border-radius: 50%;
 		margin: 0.3em;
+		@media screen and (max-width: 390px){
+				width: 2.4em;
+				height: 2.4em;
+				@media screen and (max-width: 330px) {
+					width: 2em;
+					height: 2em;
+				}
+		}
 
 		:hover {
 			cursor: pointer;
